@@ -8,10 +8,25 @@
   </head>
   <body>
     <h1 class="text-center">Base de Datos de Alumnos</h1>
-    <section class="container">
+    <section id="menu-section" class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Menú</h2>
+                <h4>Seleccione una Opción</h4>
+            </div>
+            <div class="mb-3 text-center">
+                <button type="button" onclick="toNewMenu('new-students-section')" class="my-3 btn btn-primary">Dar de Alta Alumnos</button>
+                <button type="button" onclick="toNewMenu('new-subjects-section')" class="my-3 btn btn-primary">Dar de Alta Materias</button>
+                <button type="button" onclick="toNewMenu('enroll-section')" class="my-3 btn btn-primary">Inscribir Alumnos a Clases</button>
+                <button type="button" onclick="toNewMenu('grading-section')" class="my-3 btn btn-primary">Calificar Alumnos</button>
+                <button type="button" onclick="toNewMenu('student-info-section')" class="my-3 btn btn-primary">Información Alumnos</button>
+            </div>
+        </div>
+    </section>
+    <section class="container d-none" id="new-students-section">
         <div class="row">
             <div class="col-12">
-                <h2>Dar de Alta Alumno</h2>
+                <h2 class="text-center">Dar de Alta Alumno</h2>
             </div>
         </div>
         <form id="register-form">
@@ -35,12 +50,15 @@
                 <button type="button" onclick="school.studentRegister()" class="btn btn-primary">Dar de Alta Alumno</button>
             </div>
         </form>
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" onclick="toMainMenu('new-students-section')" class="my-3 btn btn-secondary">Regresar</button>
+        </div>
     </section>
 
-    <section class="container">
+    <section class="container d-none" id="new-subjects-section">
         <div class="row">
             <div class="col-12">
-                <h2>Dar de Alta Materia</h2>
+                <h2 class="text-center">Dar de Alta Materia</h2>
             </div>
         </div>
         <form id="subject-form">
@@ -56,12 +74,15 @@
                 <button type="button" onclick="school.subjectRegister()" class="btn btn-primary">Agregar Materia</button>
             </div>
         </form>
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" onclick="toMainMenu('new-subjects-section')" class="my-3 btn btn-secondary">Regresar</button>
+        </div>
     </section>
 
-    <section class="container">
+    <section class="container d-none" id="enroll-section">
         <div class="row">
             <div class="col-12">
-                <h2>Inscribir Alumno a Clase</h2>
+                <h2 class="text-center">Inscribir Alumno a Clase</h2>
             </div>
         </div>
         <form id="group-form">
@@ -92,12 +113,15 @@
                 <button type="button" class="btn btn-primary" onclick="school.subjectsArray[school.getSubject('choose-subject')].enrollStudent()">Inscribir Alumno</button>
             </div>
         </form>
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" onclick="toMainMenu('enroll-section')" class="my-3 btn btn-secondary">Regresar</button>
+        </div>
     </section>
 
-    <section class="container">
+    <section class="container d-none" id="grading-section">
         <div class="row">
             <div class="col-12">
-                <h2>Alumnos Inscritos</h2>
+                <h2 class="text-center">Calificar Alumno</h2>
             </div>
         </div>
         <form>
@@ -124,12 +148,15 @@
         <div class="mb-3">
             <button type="button" class="btn btn-secondary" onclick="school.subjectsArray[school.getSubject('choose-subject-1')].gradeArrangeA()">Ordenar por Calificación (Ascendente)</button>
         </div>
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" onclick="toMainMenu('grading-section')" class="my-3 btn btn-secondary">Regresar</button>
+        </div>
     </section>
 
-    <section class="container">
+    <section class="container d-none" id="student-info-section">
         <div class="row">
             <div class="col-12">
-                <h2>Promedio Alumno</h2>
+                <h2 class="text-center">Promedio del Alumno</h2>
             </div>
         </div>
         <form id="student-form">
@@ -161,9 +188,12 @@
 
             </div>
         </div>
+        <div class="mb-3 d-flex justify-content-end">
+            <button type="button" onclick="toMainMenu('student-info-section')" class="my-3 btn btn-secondary">Regresar</button>
+        </div>
     </section>
 
-    
+    <script src="menu.js"></script>
     <script src="students.js"></script>
     <script src="subjects.js"></script>
     <script src="school.js"></script>

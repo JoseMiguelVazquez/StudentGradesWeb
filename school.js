@@ -75,8 +75,8 @@ class School{
         const studentSubjectsGrades = document.getElementById("student-subjects-grades");
         let studentNameGrade = student.name + " " + student.surnameP + " " + student.surnameM;
         studentSubjectsGrades.innerHTML = `<h3>${studentNameGrade}</h3>
-                                        <p class="d-inline col-6">Materia</p>
-                                        <p class="d-inline col-6 text-end">Calificación</p>`;
+                                        <p class="d-inline col-6"><strong>Materia</strong></p>
+                                        <p class="d-inline col-6 text-end"><strong>Calificación</strong></p>`;
         student.grades.forEach((subject) => {
             let gradeListDiv = document.createElement("div");
             gradeListDiv.classList.add("row");

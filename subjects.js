@@ -34,7 +34,7 @@ class Subject{
             listDiv.innerHTML = `<p class="d-inline col-4 col-md-3">${student.name}</p>
                             <p class="d-inline col-4 col-md-3">${student.surnameP}</p>
                             <p class="d-inline col-4 col-md-3">${student.surnameM}</p>
-                            <div class="row mb-3 col-10 col-sm-6 col-md-3">
+                            <div class="row mb-3 col-10 col-sm-6 col-lg-3">
                                 <input type="number" class="form-control form-control-sm d-inline w-25 col-6" id="grade-${index}">
                                 <button type="button" class="btn btn-primary d-inline w-75 col-6" onclick="school.subjectsArray[school.getSubject('choose-subject-1')].assignGrade(${index})">Calificar</button>
                             </div>`;

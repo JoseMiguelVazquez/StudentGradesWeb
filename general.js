@@ -204,9 +204,26 @@ function findIfCredentialsExist(array,name,surnameP,surnameM){
     return false;
 }
 
+//FUNCION PARA MOSTRAR EL ARREGLO DE OBJETOS DE ESTUDIANTES PREDETERMINADOS PARA HACER PRUEBAS
+function showDefaultSchoolStudents(studentArray){
+    const testStudentsCard = document.getElementById("test-students-card-list");
+    const testStudentsCard1 = document.getElementById("test-students-card-list-1");
+    studentArray.forEach(student => {
+        let studentInfo = document.createElement("li");
+        let studentInfo2 = document.createElement("li");
+        studentInfo.innerHTML = student.name + " " + student.surnameP + " " + student.surnameM;
+        studentInfo2.innerHTML = student.name + " " + student.surnameP + " " + student.surnameM;
+        testStudentsCard.appendChild(studentInfo);
+        testStudentsCard1.appendChild(studentInfo2);
+    });
+}
+
+
+
 
 updateSubjectSelect();
 school.studentArray.sort(sortByName);
 school.subjectsArray.sort(sortByName);
+showDefaultSchoolStudents(school.studentArray);
 
 

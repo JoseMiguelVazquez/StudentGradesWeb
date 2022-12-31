@@ -54,12 +54,17 @@ class School{
             array.sort(sortByName);
             studentIndexes = busquedaBinariaPersona(array,studentName,"name");
         }
-
-        studentIndexes.forEach(studentIndex =>
-            studentSelect.add(
-                new Option(studentIndex + " - " + this.studentArray[studentIndex].name + " " + this.studentArray[studentIndex].surnameP + " " + this.studentArray[studentIndex].surnameM)
-            )
-        );
+        if(studentIndexes.length == 0){
+            alert("No se encontró el Alumno, intente escribir su nombre con mayúsculas y puntuación exacta");
+        }
+        else{
+            studentIndexes.forEach(studentIndex =>
+                studentSelect.add(
+                    new Option(studentIndex + " - " + this.studentArray[studentIndex].name + " " + this.studentArray[studentIndex].surnameP + " " + this.studentArray[studentIndex].surnameM)
+                )
+            );
+        }
+        
         // const studentIndex = this.studentArray.findIndex((student) => student.name == studentName); //hacerlo con busqueda binaria?
         // console.log(studentIndex);
         // return studentIndex;

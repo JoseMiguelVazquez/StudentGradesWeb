@@ -19,8 +19,9 @@
                 <button type="button" onclick="toNewMenu('new-students-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Dar de Alta Alumnos</button>
                 <button type="button" onclick="toNewMenu('new-subjects-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Dar de Alta Materias</button>
                 <button type="button" onclick="toNewMenu('enroll-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Inscribir Alumnos a Clases</button>
-                <button type="button" onclick="toNewMenu('grading-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-4">Calificar Alumnos</button>
-                <button type="button" onclick="toNewMenu('student-info-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-4">Información Alumnos</button>
+                <button type="button" onclick="toNewMenu('grading-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Calificar Alumnos</button>
+                <button type="button" onclick="toNewMenu('student-info-section')" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Información Alumnos</button>
+                <button type="button" onclick="saveData()" class="my-3 mx-2 btn btn-primary col-12 col-md-5 col-xl-3">Guardar en Local Storage</button>
             </div>
         </div>
     </section>
@@ -45,7 +46,7 @@
             </div>
             <div class="mb-3">
                 <label for="register-age" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="register-age">
+                <input type="number" min="10" max="99" class="form-control" id="register-age">
             </div>
             <div class="mb-3">
                 <button type="button" onclick="school.studentRegister()" class="btn btn-primary">Dar de Alta Alumno</button>

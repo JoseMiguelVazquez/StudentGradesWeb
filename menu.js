@@ -1,3 +1,4 @@
+
 const menuSection = document.getElementById("menu-section");
 
 
@@ -12,4 +13,10 @@ function toMainMenu(sectionId){
     const sectionToHide = document.getElementById(sectionId);
     sectionToHide.classList.add("d-none");
     menuSection.classList.remove("d-none");
+}
+
+function saveData(){
+    alert("Futura Implementación");
+    // alert("Datos Guardados");
+    // localStorage.setItem("mySchool",JSON.stringify(school));
 }

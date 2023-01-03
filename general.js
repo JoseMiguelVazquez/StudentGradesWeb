@@ -1,6 +1,3 @@
-//GENERAL VARIABLES AND REFERENCES
-
-
 
 //GENERAL FUNCTIONS
 
@@ -44,10 +41,23 @@ function sortBySubject(a,b){
 //PARA ORDENAR POR CALIFICACIONES EL ARREGLO DE ALUMNOS (ENROLLED STUDENTS)
 //(ARREGLO DE OBJETOS CON UN ARREGLO DE GRADES). DESCENDENTE
 
-function sortByGradeD(subjectId){
-    return function(a,b){
-        let fa = parseFloat(a.grades[subjectId].grade),
-            fb = parseFloat(b.grades[subjectId].grade);
+function sortByGradeD(a,b){
+        let selectedSubject = document.getElementById('choose-subject-1');
+        let subjectIdA = a.grades.findIndex((subject) => subject.subject == selectedSubject.value);
+        let subjectIdB = b.grades.findIndex((subject) => subject.subject == selectedSubject.value);
+        let fa, fb;
+        if(subjectIdA < 0){
+            fa = 0;
+        }
+        else{
+            fa = parseFloat(a.grades[subjectIdA].grade);
+        }
+        if(subjectIdB < 0){
+            fb = 0;
+        }
+        else{
+            fb = parseFloat(b.grades[subjectIdB].grade);
+        }
         if(fa > fb) {
             return -1;
         }
@@ -55,7 +65,6 @@ function sortByGradeD(subjectId){
             return 1;
         }
         return 0;
-    }
 };
 
 //PARA ORDENAR ARREGLO DE CALIFICACIONES DE CADA MATERIA (GRADES)
@@ -76,10 +85,23 @@ function sortByGradeDGrades(a,b){
 //PARA ORDENAR POR CALIFICACIONES EL ARREGLO DE ALUMNOS
 //(ARREGLO DE OBJETOS CON UN ARREGLO DE GRADES). ASCENDENTE
 
-function sortByGradeA(subjectId){
-    return function(a,b){
-        let fa = parseFloat(a.grades[subjectId].grade),
-            fb = parseFloat(b.grades[subjectId].grade);
+function sortByGradeA(a,b){
+        let selectedSubject = document.getElementById('choose-subject-1');
+        let subjectIdA = a.grades.findIndex((subject) => subject.subject == selectedSubject.value);
+        let subjectIdB = b.grades.findIndex((subject) => subject.subject == selectedSubject.value);
+        let fa, fb;
+        if(subjectIdA < 0){
+            fa = 0;
+        }
+        else{
+            fa = parseFloat(a.grades[subjectIdA].grade);
+        }
+        if(subjectIdB < 0){
+            fb = 0;
+        }
+        else{
+            fb = parseFloat(b.grades[subjectIdB].grade);
+        }
         if(fa < fb) {
             return -1;
         }
@@ -87,7 +109,6 @@ function sortByGradeA(subjectId){
             return 1;
         }
         return 0;
-    }
 };
 
 //PARA ORDENAR ARREGLO DE CALIFICACIONES DE CADA MATERIA (GRADES)
@@ -227,3 +248,6 @@ school.subjectsArray.sort(sortByName);
 showDefaultSchoolStudents(school.studentArray);
 
 
+//bugs to fix (not in the scope of this project):
+//1. To order in asc or desc every student must be graded, or else the function doesnt work
+//2. 

@@ -14,6 +14,7 @@ class School{
         this.studentArray.push(new Student(studentName.value, surnameOne.value, surnameTwo.value, parseInt(age.value)));
         this.studentArray.sort(sortByName);
         console.log(this.studentArray);
+        alert(`Alumno: ${studentName.value} ${surnameOne.value} ${surnameTwo.value} Dado de Alta`);
         registerForm.reset();
     }
 
@@ -29,6 +30,7 @@ class School{
         subjectSelect1.add(new Option(subject.value));
         updateSubjectSelect();
         console.log(this.subjectsArray);
+        alert(`Materia: ${subject.value} con Profesor: ${professor.value} Dada de Alta`)
         subjectForm.reset();
         }
 
@@ -102,6 +104,8 @@ class School{
 
 // VARIABLES
 let school = new School("Escuela");
+//let miEscuela = JSON.parse(localStorage.getItem("mySchool"));
+
 
 school.studentArray = [
     new Student("Pedro","Vazquez","Ramirez",28), new Student("Rodrigo","Martinez","Mancera",27),
